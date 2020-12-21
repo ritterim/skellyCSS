@@ -42,7 +42,7 @@ You can adjust the width of the header by applying a size modifier class:
 You can create paragraph skeletons by applying the `skeleton` class to the paragraph tag, then including however many span tags you'd like with the `skeleton__line` class within the paragraph:
 
 ```html
-<div class="block block-4">
+<div>
   <p class="skeleton">
     <span class="skeleton__line"></span>
     <span class="skeleton__line"></span>
@@ -136,7 +136,7 @@ You can include a `span.skeleton__animation` within a header, paragraph, or imag
 
 
 ``` html
-<div class="block block-4">
+<div>
   <p class="skeleton">
     <span class="skeleton__line">
       <span class="skeleton__animation"></span>
