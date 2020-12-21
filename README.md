@@ -3,146 +3,174 @@
 A light-weight CSS framework to quickly implement skeletons into your projects.
 
 ## Basic Usage
+Skeleton content can be utilized within the Platform UI styleguide to replace placeholder text in demos. We've come up with a simple way to add skeleton content within any element or component using CSS.
 
-Skeleton content can be utilized within the Platform UI styleguide to replace placeholder text in demos. We've come up with a simple way to add skeletons content within any element or component using CSS.
+<br />
 
 ### Headers
+Apply the `skeleton` class to any type of header and it will automatically adjust to the font-size of the header stylings:
 
-For headers, you can simply apply the `.skeleton__header` class to an empty div. The default result is a full width of parent element, gray block representing an `h1` tag:
-<div class="block block-4">
-  <div class="skeleton__header"></div>
-</div>
-
+``` html
+<h1 class="skeleton"></h1>
+<h2 class="skeleton"></h2>
+<h3 class="skeleton"></h3>
+<h4 class="skeleton"></h4>
+<h5 class="skeleton"></h5>
+<h6 class="skeleton"></h6>
 ```
-<div class="block block-4">
-  <div class="skeleton__header"></div>
-</div>
-```
 
-You can specify the type of header by adding a modifier class:
-
-| Header Type | Modifier Class | Result |
-| ------------ | ------------| ------------ |
-| `h1` | `.skeleton__header--h1` | `<div class="skeleton__header skeleton__header--h1"></div>` |
-| `h2` | `.skeleton__header--h2` | `<div class="skeleton__header skeleton__header--h2"></div>` |
-| `h3` | `.skeleton__header--h3` | `<div class="skeleton__header skeleton__header--h3"></div>` |
-| `h4` | `.skeleton__header--h4` | `<div class="skeleton__header skeleton__header--h4"></div>` |
-| `h5` | `.skeleton__header--h5` | `<div class="skeleton__header skeleton__header--h5"></div>` |
-| `h6` | `.skeleton__header--h6` | `<div class="skeleton__header skeleton__header--h6"></div>` |
-
-```
-<div class="block">
-  <div class="skeleton__header skeleton__header--h2"></div>
-</div>
-```
+<br/>
 
 You can adjust the width of the header by applying a size modifier class:
+| Width | Modifier Class | 
+| ------------ | ------------|
+| Small, 25% | `.skeleton--sm` |
+| Medium, 50% | `.skeleton--md` |
+| Large, 75% | `.skeleton--lg` |
+| Full, 100% | `.skeleton--full` |
 
-| Width | Modifier Class | Result |
-| ------------ | ------------| ------------ |
-| Small, 25% | `.skeleton__header--sm` | `<div class="skeleton__header skeleton__header--sm"></div>` |
-| Medium, 50% | `.skeleton__header--md` | `<div class="skeleton__header skeleton__header--md"></div>` |
-| Large, 75% | `.skeleton__header--lg` | `<div class="skeleton__header skeleton__header--lg"></div>` |
-| Full, 100% | `.skeleton__header--full` | `<div class="skeleton__header skeleton__header--full"></div>` |
+``` html
+<h1 class="skeleton skeleton--sm"></h1>
+<h1 class="skeleton skeleton--md"></h1>
+<h1 class="skeleton skeleton--lg"></h1>
+<h1 class="skeleton skeleton--full"></h1>
+```
 
-```
-<div class="block">
-  <div class="skeleton__header skeleton__header--md"></div>
-</div>
-```
+<br />
 
 ## Paragraphs
+You can create paragraph skeletons by applying the `skeleton` class to the paragraph tag, then including however many span tags you'd like with the `skeleton__line` class within the paragraph:
 
-You can create skeleton paragraphs by applying the `.skeleton__paragraph` class to a `p` tag. Next, to represent multiple lines within the paragraph, include however many span tags are necessary and give them each a class of `.skeleton__paragraph-line`. This will result in multiple lines of full-width gray blocks representing a paragraph.
-
-<div class="block block-4">
-  <p class="skeleton__paragraph">
-    <span class="skeleton__paragraph-line"></span>
-    <span class="skeleton__paragraph-line"></span>
-    <span class="skeleton__paragraph-line"></span>
-    <span class="skeleton__paragraph-line"></span>
-  </p>
-</div>
-
-```
-<div class="block block-4">
-  <p class="skeleton__paragraph">
-    <span class="skeleton__paragraph-line"></span>
-    <span class="skeleton__paragraph-line"></span>
-    <span class="skeleton__paragraph-line"></span>
-    <span class="skeleton__paragraph-line"></span>
+```html
+<div>
+  <p class="skeleton">
+    <span class="skeleton__line"></span>
+    <span class="skeleton__line"></span>
+    <span class="skeleton__line"></span>
+    <span class="skeleton__line"></span>
   </p>
 </div>
 ```
 
-<div class="message message--info">
-  <p>If there is more than one line, the last span tag will always be at 50% width.</p>
-</div>
+Note:
+If there is more than one line, the last span tag will always be at 50% width.
 
+<br />
 
-## Paragraph JavaScript Utility
-We've also built in a JavaScript utility to help create paragraphs easier. Create an empty `div` and apply the `.skeleton__paragraph-container` class to it. Next add the `data-lines` attribute and set it to however many lines you'd like the paragraph to include, such as:
+## Alignment
+You can text align the skeleton using alignment modifier classes:
 
-<div class="block block-4">
-  <div class="skeleton__paragraph-container" data-lines="7"></div>
-</div>
+| Alignment | Modifier Class |
+| ------------ | ------------|
+| Left | `.skeleton--left` |
+| Medium, 50% | `.skeleton--right` |
+| Large, 75% | `.skeleton--center` |
 
+``` html
+<!-- Left Align -->
+<p class="skeleton skeleton--left">
+  <span class="skeleton__line"></span>
+  <span class="skeleton__line"></span>
+  <span class="skeleton__line"></span>
+  <span class="skeleton__line"></span>
+</p>
+
+<!-- Center Align -->
+<p class="skeleton skeleton--center">
+  <span class="skeleton__line"></span>
+  <span class="skeleton__line"></span>
+  <span class="skeleton__line"></span>
+  <span class="skeleton__line"></span>
+</p>
+
+<!-- Right Align -->
+<p class="skeleton skeleton--right">
+  <span class="skeleton__line"></span>
+  <span class="skeleton__line"></span>
+  <span class="skeleton__line"></span>
+  <span class="skeleton__line"></span>
+</p>
 ```
-<div class="block block-4">
-  <div class="skeleton__paragraph-container" data-lines="7">
+
+<br />
+
+## Images
+You can create an image skeleton by adding the `.skeleton-image` class to an img tag -- do not include the `src` attribute. By default this will apply the image skeleton at 100% height and width of the parent container.
+
+| Size | Modifier Class |
+| ------------ | ------------| 
+| Small, 50x50 | `.skeleton-image--sm` |
+| Medium, 100x100 | `.skeleton-image--md` |
+| Large, 200x200 | `.skeleton-image--lg` |
+| X-Large, 400x400 | `.skeleton-image--xl` |
+| Full, 100% x 100% | `.skeleton-image--full` |
+
+
+``` html
+<img class="skeleton-image skeleton-image--md" />
+<img class="skeleton-image skeleton-image--sm" />
+<img class="skeleton-image skeleton-image--lg" />
+<img class="skeleton-image skeleton-image--xl" />
+```
+
+<br />
+
+You can also do different shapes using shape modifier classes:
+| Shape | Description | Modifier Class |
+| ------------ |------------ | ------------| 
+| Landscape Rectangle | Sets the width of the image to 100% | `.skeleton-image--landscape` |
+| Portrait Rectangle | Sets the height of the image to 100% | `.skeleton-image--portrait` |
+| Circle | Sets the border radius to 50% | `.skeleton-image--circle` |
+
+
+``` html
+<img class="skeleton-image skeleton-image--lg skeleton-image--landscape" />
+<img class="skeleton-image skeleton-image--lg skeleton-image--portrait" />
+<img class="skeleton-image skeleton-image--lg skeleton-image--circle" />
+```
+
+<br />
+
+## Animation
+You can include a `span.skeleton__animation` within a header, paragraph, or image to apply an animation to it.
+
+
+``` html
+<div>
+  <p class="skeleton">
+    <span class="skeleton__line">
+      <span class="skeleton__animation"></span>
+    </span>
+        <span class="skeleton__line">
+      <span class="skeleton__animation"></span>
+    </span>
+    <span class="skeleton__line">
+      <span class="skeleton__animation"></span>
+    </span>
+    <span class="skeleton__line">
+      <span class="skeleton__animation"></span>
+    </span>
+  </p>
 </div>
 ```
 
 <br />
 
-## Examples
-### Article
-<article>
-  <div class="skeleton__header skeleton__header--h1 skeleton__header--md"></div>
-  <div class="skeleton__paragraph-container" data-lines="4"></div>
-  <div class="skeleton__paragraph-container" data-lines="3"></div>
-  <div class="skeleton__paragraph-container" data-lines="7"></div>
-</article>
+## JavaScript Utility
+We've also built in a JavaScript utility to help create skeletons easier. On either a header tag or a paragraph tag, add the `skeleton` class and a `data-lines` attribute with the number of lines you'd like the skeleton to have:
 
-### Cards
-<div class="block-container mb-4">
-  <div class="block block-4">
-    <div class="card mx-2">
-      <div class="skeleton__header skeleton__header--h2 skeleton__header--md"></div>
-      <div class="skeleton__paragraph-container" data-lines="3"></div>
-    </div>
-  </div>
-    <div class="block block-4">
-    <div class="card mx-2">
-      <div class="skeleton__header skeleton__header--h1 skeleton__header--md"></div>
-      <div class="skeleton__paragraph-container" data-lines="6"></div>
-    </div>
-  </div>
-    <div class="block block-4">
-    <div class="card mx-2">
-      <div class="skeleton__header skeleton__header--h4 skeleton__header--md"></div>
-      <div class="skeleton__paragraph-container" data-lines="4"></div>
-    </div>
-  </div>
-</div>
+``` html
+<h2 class="skeleton skeleton--md" data-lines="2"></h2>
+<p class="skeleton" data-lines="7"></p>
+```
 
-### Modal
-<div id="default-modal" class="modal modal--closed" tabindex="-1">
-   <div class="modal__inner animated slideInUp faster">
-     <div class="modal__header flex flex--justify-between">
-       <div class="skeleton__header skeleton__header--2 skeleton__header--sm"></div>
-       <button class="button modal__close" data-modal="default-modal">Close <i class="pi-times"></i></button>
-     </div>
-     <div class="modal__content">
-       <div class="skeleton__header skeleton__header--h2 skeleton__header--md"></div>
-       <div class="skeleton__paragraph-container" data-lines="7"></div>
-       <div class="skeleton__paragraph-container" data-lines="3"></div>
-       <div class="skeleton__paragraph-container" data-lines="5"></div>
-     </div>
-   </div>
- </div>
- <div class="block-container mobile-up-1 tablet-up-4 desktop-up-5 blocks px-2 mb-3">
-     <div class="block">
-         <button class="button button--post button--lg modal__open" data-modal="default-modal">Trigger Modal</button>
-     </div>
- </div>
+<br />
+
+You can also give the skeleton animation by adding the `data-animation` attribute and setting it to `true`:
+
+``` html
+<h2 class="skeleton skeleton--md" data-animation="true"></h2>
+<p class="skeleton" data-lines="7" data-animation="true"></p>
+```
+
+<br />
