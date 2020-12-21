@@ -161,8 +161,7 @@ We've also built in a JavaScript utility to help create skeletons easier. On eit
 
 ``` html
 <h2 class="skeleton skeleton--md" data-lines="2"></h2>
-  <p class="skeleton" data-lines="7"></p>
-</div>
+<p class="skeleton" data-lines="7"></p>
 ```
 
 <br />
