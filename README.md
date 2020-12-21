@@ -10,14 +10,14 @@ Skeleton content can be utilized within the Platform UI styleguide to replace pl
 ### Headers
 Apply the `skeleton` class to any type of header and it will automatically adjust to the font-size of the header stylings:
 
-{{< highlight html >}}
+``` html
 <h1 class="skeleton"></h1>
 <h2 class="skeleton"></h2>
 <h3 class="skeleton"></h3>
 <h4 class="skeleton"></h4>
 <h5 class="skeleton"></h5>
 <h6 class="skeleton"></h6>
-{{< /highlight >}}
+```
 
 <br/>
 
@@ -29,19 +29,19 @@ You can adjust the width of the header by applying a size modifier class:
 | Large, 75% | `.skeleton--lg` |
 | Full, 100% | `.skeleton--full` |
 
-{{< highlight html >}}
+``` html
 <h1 class="skeleton skeleton--sm"></h1>
 <h1 class="skeleton skeleton--md"></h1>
 <h1 class="skeleton skeleton--lg"></h1>
 <h1 class="skeleton skeleton--full"></h1>
-{{< /highlight >}}
+```
 
 <br />
 
 ## Paragraphs
 You can create paragraph skeletons by applying the `skeleton` class to the paragraph tag, then including however many span tags you'd like with the `skeleton__line` class within the paragraph:
 
-{{< highlight html >}}
+```html
 <div class="block block-4">
   <p class="skeleton">
     <span class="skeleton__line"></span>
@@ -50,7 +50,7 @@ You can create paragraph skeletons by applying the `skeleton` class to the parag
     <span class="skeleton__line"></span>
   </p>
 </div>
-{{< /highlight >}}
+```
 
 Note:
 If there is more than one line, the last span tag will always be at 50% width.
@@ -66,7 +66,7 @@ You can text align the skeleton using alignment modifier classes:
 | Medium, 50% | `.skeleton--right` |
 | Large, 75% | `.skeleton--center` |
 
-{{< highlight html >}}
+``` html
 <!-- Left Align -->
 <p class="skeleton skeleton--left">
   <span class="skeleton__line"></span>
@@ -90,8 +90,7 @@ You can text align the skeleton using alignment modifier classes:
   <span class="skeleton__line"></span>
   <span class="skeleton__line"></span>
 </p>
-
-{{< /highlight >}}
+```
 
 <br />
 
@@ -106,19 +105,13 @@ You can create an image skeleton by adding the `.skeleton-image` class to an img
 | X-Large, 400x400 | `.skeleton-image--xl` |
 | Full, 100% x 100% | `.skeleton-image--full` |
 
-<div class="flex mb-3">
-  <img class="skeleton-image skeleton-image--sm mx-3" />
-  <img class="skeleton-image skeleton-image--md mx-3" />
-  <img class="skeleton-image skeleton-image--lg mx-3" />
-  <img class="skeleton-image skeleton-image--xl mx-3" />
-</div>
 
-{{< highlight html >}}
+``` html
 <img class="skeleton-image skeleton-image--md" />
 <img class="skeleton-image skeleton-image--sm" />
 <img class="skeleton-image skeleton-image--lg" />
 <img class="skeleton-image skeleton-image--xl" />
-{{< /highlight >}}
+```
 
 <br />
 
@@ -129,46 +122,20 @@ You can also do different shapes using shape modifier classes:
 | Portrait Rectangle | Sets the height of the image to 100% | `.skeleton-image--portrait` |
 | Circle | Sets the border radius to 50% | `.skeleton-image--circle` |
 
-<div class="block-container mb-3">
-  <div class="block-4 flex flex--justify-center">
-    <img class="skeleton-image skeleton-image--lg skeleton-image--landscape" />
-  </div>
-  <div class="block-4 flex flex--justify-center" style="height:250px">
-    <img class="skeleton-image skeleton-image--lg skeleton-image--portrait" />
-  </div>
-  <div class="block-4 flex flex--justify-center">
-    <img class="skeleton-image skeleton-image--lg skeleton-image--circle" />
-  </div>
-</div>
 
-{{< highlight html >}}
+``` html
 <img class="skeleton-image skeleton-image--lg skeleton-image--landscape" />
 <img class="skeleton-image skeleton-image--lg skeleton-image--portrait" />
 <img class="skeleton-image skeleton-image--lg skeleton-image--circle" />
-{{< /highlight >}}
+```
 
 <br />
 
 ## Animation
 You can include a `span.skeleton__animation` within a header, paragraph, or image to apply an animation to it.
-<div class="block block-4">
-  <p class="skeleton">
-    <span class="skeleton__line">
-      <span class="skeleton__animation"></span>
-    </span>
-        <span class="skeleton__line">
-      <span class="skeleton__animation"></span>
-    </span>
-    <span class="skeleton__line">
-      <span class="skeleton__animation"></span>
-    </span>
-    <span class="skeleton__line">
-      <span class="skeleton__animation"></span>
-    </span>
-  </p>
-</div>
 
-{{< highlight html >}}
+
+``` html
 <div class="block block-4">
   <p class="skeleton">
     <span class="skeleton__line">
@@ -185,28 +152,26 @@ You can include a `span.skeleton__animation` within a header, paragraph, or imag
     </span>
   </p>
 </div>
-{{< /highlight >}}
+```
 
 <br />
 
 ## JavaScript Utility
 We've also built in a JavaScript utility to help create skeletons easier. On either a header tag or a paragraph tag, add the `skeleton` class and a `data-lines` attribute with the number of lines you'd like the skeleton to have:
 
-{{< highlight html >}}
+``` html
 <h2 class="skeleton skeleton--md" data-lines="2"></h2>
   <p class="skeleton" data-lines="7"></p>
 </div>
-{{< /highlight >}}
+```
 
 <br />
 
 You can also give the skeleton animation by adding the `data-animation` attribute and setting it to `true`:
 
-{{< highlight html >}}
-
+``` html
 <h2 class="skeleton skeleton--md" data-animation="true"></h2>
 <p class="skeleton" data-lines="7" data-animation="true"></p>
-
-{{< /highlight >}}
+```
 
 <br />
