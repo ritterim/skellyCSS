@@ -111,6 +111,7 @@ h6 {
   padding: 0;
   .skeleton__line {
     margin-bottom: 0.2em;
+    background:darken($skelly-color, 5%);
   }
 }
 
