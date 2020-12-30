@@ -1,14 +1,49 @@
 # skellyCSS
-
 A light-weight CSS framework to quickly implement skeletons into your projects.
 
-## Basic Usage
-Skeleton content can be utilized within the Platform UI styleguide to replace placeholder text in demos. We've come up with a simple way to add skeleton content within any element or component using CSS.
+![Cards with Skeleton screenshot](screenshots/skeleton-cards.png)
+
+<h2>Table of Contents</h2>
+
+- [skellyCSS](#skellycss)
+  - [Installation](#installation)
+    - [CSS](#css)
+    - [JavaScript](#javascript)
+  - [Usage](#usage)
+    - [Headers](#headers)
+    - [Paragraphs](#paragraphs)
+    - [Line Width](#line-width)
+    - [Alignment](#alignment)
+    - [Images](#images)
+      - [Sizes](#sizes)
+      - [Shapes](#shapes)
+    - [Animation](#animation)
+  - [JavaScript Utility](#javascript-utility)
 
 <br />
 
+## Installation
+### CSS
+Include the skelly.css file wherever you add your CSS:
+``` html
+<link rel="stylesheet" href="../dist/skelly.css">
+```
+
+### JavaScript
+Include the skelly.js file wherever you add your JavaScript:
+``` html
+<script src="../dist/skelly.js"></script>
+```
+
+<br />
+
+## Usage
+Skeletons can be quickly added to any project with a few simple lines of code. 
+
 ### Headers
 Apply the `skeleton` class to any type of header and it will automatically adjust to the font-size of the header stylings:
+
+![Headers](screenshots/headers.png)
 
 ``` html
 <h1 class="skeleton"></h1>
@@ -19,28 +54,12 @@ Apply the `skeleton` class to any type of header and it will automatically adjus
 <h6 class="skeleton"></h6>
 ```
 
-<br/>
-
-You can adjust the width of the header by applying a size modifier class:
-| Width | Modifier Class | 
-| ------------ | ------------|
-| Small, 25% | `.skeleton--sm` |
-| Medium, 50% | `.skeleton--md` |
-| Large, 75% | `.skeleton--lg` |
-| Full, 100% | `.skeleton--full` |
-
-``` html
-<h1 class="skeleton skeleton--sm"></h1>
-<h1 class="skeleton skeleton--md"></h1>
-<h1 class="skeleton skeleton--lg"></h1>
-<h1 class="skeleton skeleton--full"></h1>
-```
-
 <br />
 
-## Paragraphs
-You can create paragraph skeletons by applying the `skeleton` class to the paragraph tag, then including however many span tags you'd like with the `skeleton__line` class within the paragraph:
+### Paragraphs
+You can create paragraph skeletons by applying the `skeleton` class to the paragraph tag, then including however many span tags you'd like with the `skeleton__line` class within the paragraph. In order to make the paragraph skeleton look more like a paragraph, the last line is set to 50% width.
 
+![Paragraphs](screenshots/paragraphs.png)
 ```html
 <div>
   <p class="skeleton">
@@ -52,19 +71,38 @@ You can create paragraph skeletons by applying the `skeleton` class to the parag
 </div>
 ```
 
-Note:
-If there is more than one line, the last span tag will always be at 50% width.
+<br />
+
+### Line Width
+You can adjust the line width by applying a size modifier class:
+| Width | Modifier Class | 
+| ------------ | ------------|
+| Small, 25% | `.skeleton--sm` |
+| Medium, 50% | `.skeleton--md` |
+| Large, 75% | `.skeleton--lg` |
+| Full, 100% | `.skeleton--full` |
+
+![Line Widths](screenshots/line-widths.png)
+
+``` html
+<h1 class="skeleton skeleton--sm"></h1>
+<h1 class="skeleton skeleton--md"></h1>
+<h1 class="skeleton skeleton--lg"></h1>
+<h1 class="skeleton skeleton--full"></h1>
+```
 
 <br />
 
-## Alignment
+### Alignment
 You can text align the skeleton using alignment modifier classes:
 
 | Alignment | Modifier Class |
 | ------------ | ------------|
 | Left | `.skeleton--left` |
-| Medium, 50% | `.skeleton--right` |
-| Large, 75% | `.skeleton--center` |
+| Right | `.skeleton--right` |
+| Center | `.skeleton--center` |
+
+![Alignment](screenshots/alignment.png)
 
 ``` html
 <!-- Left Align -->
@@ -94,8 +132,11 @@ You can text align the skeleton using alignment modifier classes:
 
 <br />
 
-## Images
+### Images
 You can create an image skeleton by adding the `.skeleton-image` class to an img tag -- do not include the `src` attribute. By default this will apply the image skeleton at 100% height and width of the parent container.
+
+#### Sizes
+We have included some default sizes included for skeleton images:
 
 | Size | Modifier Class |
 | ------------ | ------------| 
@@ -105,6 +146,7 @@ You can create an image skeleton by adding the `.skeleton-image` class to an img
 | X-Large, 400x400 | `.skeleton-image--xl` |
 | Full, 100% x 100% | `.skeleton-image--full` |
 
+![Images](screenshots/images.png)
 
 ``` html
 <img class="skeleton-image skeleton-image--md" />
@@ -115,13 +157,16 @@ You can create an image skeleton by adding the `.skeleton-image` class to an img
 
 <br />
 
+#### Shapes
 You can also do different shapes using shape modifier classes:
+
 | Shape | Description | Modifier Class |
 | ------------ |------------ | ------------| 
 | Landscape Rectangle | Sets the width of the image to 100% | `.skeleton-image--landscape` |
 | Portrait Rectangle | Sets the height of the image to 100% | `.skeleton-image--portrait` |
 | Circle | Sets the border radius to 50% | `.skeleton-image--circle` |
 
+![Image Shapes](screenshots/image-shapes.png)
 
 ``` html
 <img class="skeleton-image skeleton-image--lg skeleton-image--landscape" />
@@ -131,24 +176,25 @@ You can also do different shapes using shape modifier classes:
 
 <br />
 
-## Animation
-You can include a `span.skeleton__animation` within a header, paragraph, or image to apply an animation to it.
+### Animation
+You can include a `span.skeleton--animation` within a header or paragraph to apply an animation to it.
 
+![Animation](screenshots/animation.gif)
 
 ``` html
 <div>
   <p class="skeleton">
     <span class="skeleton__line">
-      <span class="skeleton__animation"></span>
+      <span class="skeleton--animation"></span>
     </span>
         <span class="skeleton__line">
-      <span class="skeleton__animation"></span>
+      <span class="skeleton--animation"></span>
     </span>
     <span class="skeleton__line">
-      <span class="skeleton__animation"></span>
+      <span class="skeleton--animation"></span>
     </span>
     <span class="skeleton__line">
-      <span class="skeleton__animation"></span>
+      <span class="skeleton--animation"></span>
     </span>
   </p>
 </div>

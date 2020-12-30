@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/skelly.css" />
+    <style>
+      #container {
+        box-sizing: border-box;
+        width: 95%;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      #headers {
+        margin: 1em 0 2em;
+        border: 1px solid black;
+        padding: 1em;
+      }
+
+      #headers .skeleton {
+        margin-bottom: 0.5em;
+      }
+
+      #paragraphs {
+        margin: 1em 0 2em;
+        padding: 1em;
+        border: 1px solid black;
+      }
+
+      #line-widths {
+        margin: 1em 0 2em;
+        padding: 1em;
+        border: 1px solid black;
+      }
+
+      #alignment {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1em;
+        margin: 1em 0 2em;
+        padding: 1em;
+        border: 1px solid black;
+      }
+
+      #images {
+        display: flex;
+        justify-content: center;
+        margin: 1em 0 2em;
+        padding: 1em;
+        border: 1px solid black;
+      }
+
+      #images img {
+        margin: 1em;
+      }
+
+      #image-shapes {
+        display: flex;
+        margin: 1em 0 2em;
+        padding: 1em;
+        border: 1px solid black;
+      }
+
+      #image-shapes .image {
+        flex: 1;
+        margin: 1em;
+        height: 300px;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+      }
+
+      #animation{
+        margin: 1em 0 2em;
+        padding: 1em;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <!-- Headers -->
+      <div id="headers">
+        <h1 class="skeleton"></h1>
+        <h2 class="skeleton"></h2>
+        <h3 class="skeleton"></h3>
+        <h4 class="skeleton"></h4>
+        <h5 class="skeleton"></h5>
+        <h6 class="skeleton"></h6>
+      </div>
+
+      <!-- Paragraphs -->
+      <div id="paragraphs">
+        <p class="skeleton">
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+        </p>
+      </div>
+
+      <!-- Line Width -->
+      <div id="line-widths">
+        <h1 class="skeleton skeleton--sm"></h1>
+        <h1 class="skeleton skeleton--md"></h1>
+        <h1 class="skeleton skeleton--lg"></h1>
+        <h1 class="skeleton skeleton--full"></h1>
+      </div>
+
+      <!-- Alignment -->
+      <div id="alignment">
+        <!-- Left Align -->
+        <p class="skeleton skeleton--left">
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+        </p>
+
+        <!-- Center Align -->
+        <p class="skeleton skeleton--center">
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+        </p>
+
+        <!-- Right Align -->
+        <p class="skeleton skeleton--right">
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+          <span class="skeleton__line"></span>
+        </p>
+      </div>
+
+      <div id="images">
+        <img class="skeleton-image skeleton-image--sm" />
+        <img class="skeleton-image skeleton-image--md" />
+        <img class="skeleton-image skeleton-image--lg" />
+        <img class="skeleton-image skeleton-image--xl" />
+      </div>
+
+      <div id="image-shapes">
+        <div class="image">
+          <img
+            class="skeleton-image skeleton-image--lg skeleton-image--landscape"
+          />
+        </div>
+
+        <div class="image">
+          <img
+            class="skeleton-image skeleton-image--lg skeleton-image--portrait"
+          />
+        </div>
+
+        <div class="image">
+          <img
+            class="skeleton-image skeleton-image--lg skeleton-image--circle"
+          />
+        </div>
+      </div>
+    
+      <div id="animation">
+        <p class="skeleton">
+          <span class="skeleton__line">
+            <span class="skeleton--animation"></span>
+          </span>
+              <span class="skeleton__line">
+            <span class="skeleton--animation"></span>
+          </span>
+          <span class="skeleton__line">
+            <span class="skeleton--animation"></span>
+          </span>
+          <span class="skeleton__line">
+            <span class="skeleton--animation"></span>
+          </span>
+        </p>
+      </div>
+
+    </div>
+
+
+    <script src="../dist/skelly.js"></script>
+  </body>
+</html>

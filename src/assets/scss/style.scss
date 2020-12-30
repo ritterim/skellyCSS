@@ -4,7 +4,7 @@ $skelly-line-widths: (
   "sm": 25%,
   "md": 50%,
   "lg": 75%,
-  "full": 100%
+  "full": 100%,
 );
 
 $skelly-image-sizes: (
@@ -12,7 +12,7 @@ $skelly-image-sizes: (
   "md": 100px,
   "lg": 200px,
   "xl": 400px,
-  "full": 100%
+  "full": 100%,
 );
 
 .skeleton {
@@ -21,6 +21,7 @@ $skelly-image-sizes: (
   display: flex;
   flex-flow: column;
   width: 100%;
+
   &__line {
     overflow: hidden;
     position: relative;
@@ -41,6 +42,25 @@ $skelly-image-sizes: (
       width: $width;
     }
   }
+
+  &--left {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  &--center {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  &--right {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+  }
+
   &--animation {
     position: abosolute;
     display: flex;
@@ -97,7 +117,7 @@ p {
 
   &--circle {
     border-radius: 50%;
-    box-shadow:inset 0px 0px 1px darken($skelly-color, 50%);
+    box-shadow: inset 0px 0px 1px darken($skelly-color, 50%);
   }
 }
 
@@ -111,7 +131,7 @@ h6 {
   padding: 0;
   .skeleton__line {
     margin-bottom: 0.2em;
-    background:darken($skelly-color, 5%);
+    background: darken($skelly-color, 5%);
   }
 }
 
