@@ -113,8 +113,8 @@ You can text align the skeleton using alignment modifier classes:
 | Alignment | Modifier Class |
 | ------------ | ------------|
 | Left | `.skeleton--left` |
-| Right | `.skeleton--right` |
 | Center | `.skeleton--center` |
+| Right | `.skeleton--right` |
 
 ![Alignment](images/alignment.png)
 
