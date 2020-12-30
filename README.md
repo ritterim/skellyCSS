@@ -9,6 +9,7 @@ A light-weight CSS framework to quickly implement skeletons into your projects.
   - [Installation](#installation)
     - [CSS](#css)
     - [JavaScript](#javascript)
+  - [Quick Usage](#quick-usage)
   - [Usage](#usage)
     - [Headers](#headers)
     - [Paragraphs](#paragraphs)
@@ -34,6 +35,16 @@ Include the skelly.js file wherever you add your JavaScript:
 ``` html
 <script src="../dist/skelly.js"></script>
 ```
+
+<br />
+
+## Quick Usage
+You can quickly get started using skellyCSS using the JavaScript utility, like so:
+``` html
+<h2 class="skeleton skeleton--md" data-animation="true"></h2>
+<p class="skeleton" data-lines="4" data-animation="true">
+```
+**See full [JavaScript Utility](#javascript-utility) docs below**
 
 <br />
 
@@ -136,7 +147,7 @@ You can text align the skeleton using alignment modifier classes:
 You can create an image skeleton by adding the `.skeleton-image` class to an img tag -- do not include the `src` attribute. By default this will apply the image skeleton at 100% height and width of the parent container.
 
 #### Sizes
-We have included some default sizes included for skeleton images:
+Here are some default sizes we have included for skeleton images:
 
 | Size | Modifier Class |
 | ------------ | ------------| 
@@ -158,7 +169,7 @@ We have included some default sizes included for skeleton images:
 <br />
 
 #### Shapes
-You can also do different shapes using shape modifier classes:
+You can also make different image shapes using shape modifier classes:
 
 | Shape | Description | Modifier Class |
 | ------------ |------------ | ------------| 
@@ -177,7 +188,7 @@ You can also do different shapes using shape modifier classes:
 <br />
 
 ### Animation
-You can include a `span.skeleton--animation` within a header or paragraph to apply an animation to it.
+To add animation, add a `span.skeleton--animation` within the `.skeleton__line` elements in headers or paragaphs.
 
 ![Animation](screenshots/animation.gif)
 
@@ -203,7 +214,9 @@ You can include a `span.skeleton--animation` within a header or paragraph to app
 <br />
 
 ## JavaScript Utility
-We've also built in a JavaScript utility to help create skeletons easier. On either a header tag or a paragraph tag, add the `skeleton` class and a `data-lines` attribute with the number of lines you'd like the skeleton to have:
+The easiest and our preferred way to add Skeletons is by using the included JavaScript utilities. 
+
+On either a header tag or a paragraph tag, add the `skeleton` class and a `data-lines` attribute with the number of lines you'd like the skeleton to have:
 
 ``` html
 <h2 class="skeleton skeleton--md" data-lines="2"></h2>
@@ -218,5 +231,3 @@ You can also give the skeleton animation by adding the `data-animation` attribut
 <h2 class="skeleton skeleton--md" data-animation="true"></h2>
 <p class="skeleton" data-lines="7" data-animation="true"></p>
 ```
-
-<br />
