@@ -1,7 +1,10 @@
+<div style="display:flex; align-items:center; justify-content:center; height:300px;">
+  <img src="images/skellyCSS__logo.svg" />
+</div>
+
 # skellyCSS
 A light-weight CSS framework to quickly implement skeletons into your projects.
 
-![Cards with Skeleton screenshot](screenshots/skeleton-cards.png)
 
 <h2>Table of Contents</h2>
 
@@ -54,7 +57,7 @@ Skeletons can be quickly added to any project with a few simple lines of code.
 ### Headers
 Apply the `skeleton` class to any type of header and it will automatically adjust to the font-size of the header stylings:
 
-![Headers](screenshots/headers.png)
+![Headers](images/headers.png)
 
 ``` html
 <h1 class="skeleton"></h1>
@@ -70,7 +73,7 @@ Apply the `skeleton` class to any type of header and it will automatically adjus
 ### Paragraphs
 You can create paragraph skeletons by applying the `skeleton` class to the paragraph tag, then including however many span tags you'd like with the `skeleton__line` class within the paragraph. In order to make the paragraph skeleton look more like a paragraph, the last line is set to 50% width.
 
-![Paragraphs](screenshots/paragraphs.png)
+![Paragraphs](images/paragraphs.png)
 ```html
 <div>
   <p class="skeleton">
@@ -93,7 +96,7 @@ You can adjust the line width by applying a size modifier class:
 | Large, 75% | `.skeleton--lg` |
 | Full, 100% | `.skeleton--full` |
 
-![Line Widths](screenshots/line-widths.png)
+![Line Widths](images/line-widths.png)
 
 ``` html
 <h1 class="skeleton skeleton--sm"></h1>
@@ -113,7 +116,7 @@ You can text align the skeleton using alignment modifier classes:
 | Right | `.skeleton--right` |
 | Center | `.skeleton--center` |
 
-![Alignment](screenshots/alignment.png)
+![Alignment](images/alignment.png)
 
 ``` html
 <!-- Left Align -->
@@ -157,7 +160,7 @@ Here are some default sizes we have included for skeleton images:
 | X-Large, 400x400 | `.skeleton-image--xl` |
 | Full, 100% x 100% | `.skeleton-image--full` |
 
-![Images](screenshots/images.png)
+![Images](images/images.png)
 
 ``` html
 <img class="skeleton-image skeleton-image--md" />
@@ -177,7 +180,7 @@ You can also make different image shapes using shape modifier classes:
 | Portrait Rectangle | Sets the height of the image to 100% | `.skeleton-image--portrait` |
 | Circle | Sets the border radius to 50% | `.skeleton-image--circle` |
 
-![Image Shapes](screenshots/image-shapes.png)
+![Image Shapes](images/image-shapes.png)
 
 ``` html
 <img class="skeleton-image skeleton-image--lg skeleton-image--landscape" />
@@ -190,7 +193,7 @@ You can also make different image shapes using shape modifier classes:
 ### Animation
 To add animation, add a `span.skeleton--animation` within the `.skeleton__line` elements in headers or paragaphs.
 
-![Animation](screenshots/animation.gif)
+![Animation](images/animation.gif)
 
 ``` html
 <div>
