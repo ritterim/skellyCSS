@@ -1,5 +1,5 @@
 <div style="display:flex; align-items:center; justify-content:center; height:300px;">
-  <img src="images/fish-skeleton.svg" />
+  <img src="images/fish-skeleton.png" />
 </div>
 
 # skellyCSS
