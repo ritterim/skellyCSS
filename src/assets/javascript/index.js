@@ -2,23 +2,23 @@ const skeletons = document.querySelectorAll(".skeleton");
 
 if (skeletons) {
   skeletons.forEach((skelly) => {
-    let lineCount = parseInt(skelly.getAttribute("data-lines"));
+    let lineCount = parseInt(skelly.dataset.lines);
 
-    let animation = skelly.getAttribute("data-animation") === "true";
+    let animation = skelly.dataset.animation === "true";
 
     if (!lineCount && skelly.innerHTML.trim().length == 0) {
       lineCount = 1;
     }
 
-    for (i = 0; i < lineCount; i++) {
+    for (let i = 0; i < lineCount; i++) {
       const line = document.createElement("span");
       line.classList.add("skeleton__line");
       if (animation === true) {
         const animationElement = document.createElement("span");
         animationElement.classList.add("skeleton--animation");
-        line.appendChild(animationElement);
+        line.append(animationElement);
       }
-      skelly.appendChild(line);
+      skelly.append(line);
     }
   });
 }
@@ -27,12 +27,12 @@ const skeletonImages = document.querySelectorAll(".skeleton-image");
 
 if (skeletonImages) {
   skeletonImages.forEach((skelly) => {
-    let animation = skelly.getAttribute("data-animation") === "true";
+    let animation = skelly.dataset.animation === "true";
 
     if (animation === true) {
       const animationElement = document.createElement("span");
       animationElement.classList.add("skeleton--animation");
-      skelly.appendChild(animationElement);
+      skelly.append(animationElement);
     }
   });
 }
