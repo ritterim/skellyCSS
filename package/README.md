@@ -45,7 +45,7 @@ Include the skelly.js file wherever you add your JavaScript:
 You can quickly get started using skellyCSS using the JavaScript utility, like so:
 ``` html
 <h2 class="skeleton skeleton--md" data-animation="true"></h2>
-<p class="skeleton" data-lines="4" data-animation="true"></p>
+<p class="skeleton" data-lines="4" data-animation="true">
 ```
 **See full [JavaScript Utility](#javascript-utility) docs below**
 

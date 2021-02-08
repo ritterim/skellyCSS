@@ -1,0 +1,30 @@
+environment:
+  matrix:
+    - nodejs_version: STABLE
+      configuration: publish
+    - nodejs_version: LTS
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+
+before_build:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+
+build_script:
+  - ./build.cmd
+
+cache:
+  - node_modules -> package.json, package-lock.json
+
+deploy_script:
+  - ps: |
+      if ($ENV:CONFIGURATION -eq "publish")
+      {
+        "//registry.npmjs.org/:_authToken=`$`{NPM_TOKEN`}" | Out-File (Join-Path $ENV:APPVEYOR_BUILD_FOLDER ".npmrc") -Encoding UTF8
+        iex "npm pack"
+        iex "npm publish"
+      }
+    on:
+      branch: master
