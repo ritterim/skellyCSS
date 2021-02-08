@@ -3,7 +3,6 @@
   "version": "0.0.3",
   "description": "A light-weight CSS framework to quickly implement skeletons into your projects.",
   "main": "dist/skelly.js",
-  "private": "false",
   "files": [
     "dist/"
   ],
