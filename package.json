@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "A light-weight CSS framework to quickly implement skeletons into your projects.",
   "main": "dist/skelly.js",
-  "files":[
+  "files": [
     "dist/"
   ],
   "scripts": {
@@ -15,7 +15,11 @@
     "type": "git",
     "url": "git+https://github.com/ritterim/skellyCSS.git"
   },
-  "keywords": ["skeleton screens", "skeletons", "loading skeleton"],
+  "keywords": [
+    "skeleton screens",
+    "skeletons",
+    "loading skeleton"
+  ],
   "author": "Ritter Insurance Marketing (https://rimdev.io)",
   "license": "MIT",
   "bugs": {
@@ -24,6 +28,7 @@
   "homepage": "https://github.com/ritterim/skellyCSS#readme",
   "devDependencies": {
     "cssnano": "^4.1.10",
+    "parcel-bundler": "^1.12.4",
     "sass": "^1.30.0"
   },
   "dependencies": {
