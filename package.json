@@ -9,7 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/skelly.js",
-    "build": "parcel build src/skelly.js"
+    "build": "npm run build:full && npm run build:minify",
+    "build:minify": "parcel build src/skelly.js --out-file skelly.min.js --public-url ./dist/",
+    "build:full": "parcel build src/skelly.js --no-minify --public-url ./dist/"
   },
   "repository": {
     "type": "git",
