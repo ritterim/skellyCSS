@@ -10,6 +10,7 @@ A light-weight CSS framework to quickly implement skeletons into your projects.
 
 - [skellyCSS](#skellycss)
   - [Installation](#installation)
+    - [npm](#npm)
     - [CSS](#css)
     - [JavaScript](#javascript)
   - [Quick Usage](#quick-usage)
@@ -27,6 +28,11 @@ A light-weight CSS framework to quickly implement skeletons into your projects.
 <br />
 
 ## Installation
+### npm
+To install via node package manager:
+```shell
+npm install @ritterim/skellycss
+```
 ### CSS
 Include the skelly.css file wherever you add your CSS:
 ``` html
