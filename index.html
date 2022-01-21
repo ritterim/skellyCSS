@@ -2,14 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      /* styling for index.html only, not included in package */
+      body {
+        font-family: sans-serif;
+      }
+      #title {
+        margin-bottom: 2rem;
+      }
       #container {
-        box-sizing: border-box;
-        width: 95%;
-        max-width: 960px;
-        margin: 0 auto;
+        --container-width: 120ch;
+
+        width: min(var(--container-width), 100% - 3rem);
+        margin-inline: auto;
       }
 
       #headers {
@@ -22,7 +30,7 @@
         margin-bottom: 0.5em;
       }
 
-      #paragraphs {
+      .paragraphs {
         margin: 1em 0 2em;
         padding: 1em;
         border: 1px solid black;
@@ -45,6 +53,7 @@
 
       #images {
         display: flex;
+        gap: 1rem;
         justify-content: center;
         margin: 1em 0 2em;
         padding: 1em;
@@ -57,30 +66,48 @@
 
       #image-shapes {
         display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
         margin: 1em 0 2em;
+        gap:1rem;
         padding: 1em;
         border: 1px solid black;
+      }
+
+      @media screen and (min-width: 786px) {
+        #image-shapes {
+          flex-flow: row;
+          flex-wrap: wrap;
+        }
       }
 
       #image-shapes .image {
-        flex: 1;
         margin: 1em;
+        display: flex;
+        flex-flow: column;
+        gap: 1rem;
         height: 300px;
-        display:flex;
-        align-items:center;
+        align-items: center;
         justify-content: center;
       }
 
-      #animation{
+      #animation {
         margin: 1em 0 2em;
         padding: 1em;
         border: 1px solid black;
+      }
+
+      #opacity {
+        background:#759FC1;
       }
     </style>
   </head>
   <body>
     <div id="container">
+      <h1 id="title">SkellyCSS</h1>
       <!-- Headers -->
+      <h2>Headers</h2>
       <div id="headers">
         <h1 class="skeleton"></h1>
         <h2 class="skeleton"></h2>
@@ -91,24 +118,26 @@
       </div>
 
       <!-- Paragraphs -->
-      <div id="paragraphs">
-        <p class="skeleton">
-          <span class="skeleton__line"></span>
-          <span class="skeleton__line"></span>
-          <span class="skeleton__line"></span>
-          <span class="skeleton__line"></span>
-        </p>
+      <h2>Paragraphs</h2>
+      <div id="paragraphs" class="paragraphs">
+        <p class="skeleton" data-lines="6"></p>
       </div>
 
       <!-- Line Width -->
+      <h2>Line Widths</h2>
       <div id="line-widths">
+        <h3>Small</h3>
         <h1 class="skeleton skeleton--sm"></h1>
+        <h3>Medium</h3>
         <h1 class="skeleton skeleton--md"></h1>
+        <h3>Large</h3>
         <h1 class="skeleton skeleton--lg"></h1>
+        <h3>Full</h3>
         <h1 class="skeleton skeleton--full"></h1>
       </div>
 
       <!-- Alignment -->
+      <h2>Alignment</h2>
       <div id="alignment">
         <!-- Left Align -->
         <p class="skeleton skeleton--left">
@@ -135,39 +164,66 @@
         </p>
       </div>
 
+      <h2>Images</h2>
       <div id="images">
-        <img class="skeleton-image skeleton-image--sm" />
-        <img class="skeleton-image skeleton-image--md" />
-        <img class="skeleton-image skeleton-image--lg" />
-        <img class="skeleton-image skeleton-image--xl" />
+        <div class="skeleton-image skeleton-image--sm"></div>
+        <div class="skeleton-image skeleton-image--md"></div>
+        <div class="skeleton-image skeleton-image--lg"></div>
+        <div class="skeleton-image skeleton-image--xl"></div>
       </div>
 
+      <h2>Image Shapes</h2>
       <div id="image-shapes">
         <div class="image">
-          <img
-            class="skeleton-image skeleton-image--lg skeleton-image--landscape"
-          />
+          <h3>Square</h3>
+          <div
+            class="skeleton-image skeleton-image--lg skeleton-image--square"
+          ></div>
         </div>
 
         <div class="image">
-          <img
-            class="skeleton-image skeleton-image--lg skeleton-image--portrait"
-          />
-        </div>
-
-        <div class="image">
-          <img
+          <h3>Circle</h3>
+          <div
             class="skeleton-image skeleton-image--lg skeleton-image--circle"
-          />
+          ></div>
+        </div>
+
+        <div class="image">
+          <h3>Landscape</h3>
+          <div
+            class="skeleton-image skeleton-image--lg skeleton-image--landscape"
+          ></div>
+        </div>
+
+        <div class="image">
+          <h3>Portrait</h3>
+          <div
+            class="skeleton-image skeleton-image--lg skeleton-image--portrait"
+          ></div>
+        </div>
+
+        <div class="image">
+          <h3>Wide</h3>
+          <div
+            class="skeleton-image skeleton-image--lg skeleton-image--wide"
+          ></div>
+        </div>
+
+        <div class="image">
+          <h3>Tall</h3>
+          <div
+            class="skeleton-image skeleton-image--lg skeleton-image--tall"
+          ></div>
         </div>
       </div>
-    
+
+      <h2>Animation</h2>
       <div id="animation">
         <p class="skeleton">
           <span class="skeleton__line">
             <span class="skeleton--animation"></span>
           </span>
-              <span class="skeleton__line">
+          <span class="skeleton__line">
             <span class="skeleton--animation"></span>
           </span>
           <span class="skeleton__line">
@@ -178,10 +234,19 @@
           </span>
         </p>
       </div>
-
+      
+      <h2>Opacity</h2>
+      <div id="opacity" class="paragraphs">
+        <p class="skeleton" data-lines="6" data-opacity="0.3"></p>
+      </div>
+      
+      <h2>Color</h2>
+      <div id="color" class="paragraphs">
+        <p class="skeleton" data-lines="6" data-color="rebeccapurple"></p>
+      </div>
     </div>
 
 
-    <script src="../dist/skelly.js"></script>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
