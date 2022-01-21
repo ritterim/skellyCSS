@@ -24,6 +24,8 @@ A light-weight CSS framework to quickly implement skeletons into your projects.
       - [Shapes](#shapes)
     - [Animation](#animation)
   - [JavaScript Utility](#javascript-utility)
+    - [JavaScript Data Attributes](#javascript-data-attributes)
+      - [All Data Attributes](#all-data-attributes)
 
 <br />
 
@@ -34,15 +36,15 @@ To install via node package manager:
 npm install @ritterim/skellycss
 ```
 ### CSS
-Include the skelly.css file wherever you add your CSS:
+Include the Skelly css file wherever you add your CSS:
 ``` html
-<link rel="stylesheet" href="../dist/skelly.css">
+<link rel="stylesheet" href="..@ritterim/skellycss/dist/style.css">
 ```
 
 ### JavaScript
 Include the skelly.js file wherever you add your JavaScript:
 ``` html
-<script src="../dist/skelly.js"></script>
+<script src="..@ritterim/skellycss/dist/skelly.js"></script>
 ```
 
 <br />
@@ -153,7 +155,7 @@ You can text align the skeleton using alignment modifier classes:
 <br />
 
 ### Images
-You can create an image skeleton by adding the `.skeleton-image` class to an img tag -- do not include the `src` attribute. By default this will apply the image skeleton at 100% height and width of the parent container.
+You can create an image skeleton by using the `.skeleton-image` class. By default this will apply the image skeleton at 100% height and width of the parent container.
 
 #### Sizes
 Here are some default sizes we have included for skeleton images:
@@ -182,16 +184,20 @@ You can also make different image shapes using shape modifier classes:
 
 | Shape | Description | Modifier Class |
 | ------------ |------------ | ------------| 
-| Landscape Rectangle | Sets the width of the image to 100% | `.skeleton-image--landscape` |
-| Portrait Rectangle | Sets the height of the image to 100% | `.skeleton-image--portrait` |
+| Square | Sets the image aspect ratio to 1/1 (default) | `.skeleton-image--square` |
 | Circle | Sets the border radius to 50% | `.skeleton-image--circle` |
-
-![Image Shapes](images/image-shapes.png)
+| Landscape Rectangle | Sets the image aspect ratio to 4/3 | `.skeleton-image--landscape` |
+| Portrait Rectangle | Sets the image aspect ratio to 3/4| `.skeleton-image--portrait` |
+| Wide Rectangle | Sets the image aspect ratio to 16/9 | `.skeleton-image--wide` |
+| Tall Rectangle | Sets the image aspect ratio to 9/16 | `.skeleton-image--tall` |
 
 ``` html
-<img class="skeleton-image skeleton-image--lg skeleton-image--landscape" />
-<img class="skeleton-image skeleton-image--lg skeleton-image--portrait" />
-<img class="skeleton-image skeleton-image--lg skeleton-image--circle" />
+<div class="skeleton-image skeleton-image--lg skeleton-image--square"></div>
+<div class="skeleton-image skeleton-image--lg skeleton-image--circle"></div>
+<div class="skeleton-image skeleton-image--lg skeleton-image--landscape"></div>
+<div class="skeleton-image skeleton-image--lg skeleton-image--portrait"></div>
+<div class="skeleton-image skeleton-image--lg skeleton-image--wide"></div>
+<div class="skeleton-image skeleton-image--lg skeleton-image--tall"></div>
 ```
 
 <br />
@@ -240,3 +246,25 @@ You can also give the skeleton animation by adding the `data-animation` attribut
 <h2 class="skeleton skeleton--md" data-animation="true"></h2>
 <p class="skeleton" data-lines="7" data-animation="true"></p>
 ```
+
+<br />
+
+### JavaScript Data Attributes
+You can alter the way skeleton looks by utilizing other data-attributes as well, including opacity and color:
+``` html
+<!-- Opacity -->
+<h2 class="skeleton skeleton--md" data-animation="true"></h2>
+<p class="skeleton" data-lines="7" data-opacity="0.3"></p>
+
+<!-- Color -->
+<h2 class="skeleton skeleton--md" data-animation="true"></h2>
+<p class="skeleton" data-lines="7" data-color="tomato"></p>
+```
+
+#### All Data Attributes
+| Attribute | Description | Type |
+| ------------ |------------ | ------------| 
+| `data-lines` | Determines how many lines to output | Integer |
+| `data-animation` | Adds animation to the skeleton lines | Boolean |
+| `data-opacity` | Sets the opacity of the skeleton lines (sets opacity between 0 and 1) | Float |
+| `data-color` | Sets the color of the skeleton lines | Color |
