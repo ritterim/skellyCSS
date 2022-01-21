@@ -1,4 +1,8 @@
-$skelly-color: #efefef;
+$skelly-color: #EFEFEF;
+
+:root{
+ --skelly-color: #EFEFEF;
+} ;
 
 $skelly-line-widths: (
   "sm": 25%,
@@ -29,7 +33,7 @@ $skelly-image-sizes: (
     display: block;
     height: 1em;
     width: 100%;
-    background: $skelly-color;
+    background: var(--skelly-color);
     border-radius: 3px;
   }
 
@@ -92,13 +96,13 @@ p {
 .skeleton-image {
   overflow: hidden;
   display: block;
-  background-color: $skelly-color;
-  // box-shadow:inset 0px 0px 2px darken(#EFEFEF, 60%);
+  background-color: var(--skelly-color);
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBpZD0iTGF5ZXJfMSIgeD0iMCIgeT0iMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjIyLjQgMjg4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyMjIuNCAyODgiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyIvPjxnPjxwYXRoIGQ9Ik0yMTgsNzQuM0wxNDguOSw1LjhjLTItMi00LjgtMy4yLTcuNy0zLjJIMjQuN0MxMi4xLDIuNiwxLjksMTIuOCwxLjksMjUuNFYyNjNjMCwxMi42LDEwLjIsMjIuOCwyMi44LDIyLjhoMTczLjcgYzEyLjYsMCwyMi44LTEwLjIsMjIuOC0yMi44VjgyQzIyMS4yLDc5LjEsMjIwLjEsNzYuMywyMTgsNzQuM3ogTTE0NS44LDM2LjVsNDEuMyw0MWgtNDEuM1YzNi41eiBNMjUuOSwyNjEuOFYyNi42aDk1Ljh2NTkuMiBjMCw4LjYsNywxNS42LDE1LjYsMTUuNmg1OS44djE2MC40SDI1Ljl6Ii8+PGNpcmNsZSBjeD0iNzMuMyIgY3k9IjExNS4yIiByPSIyNy4xIi8+PHBhdGggZD0iTTE0Mi43LDEzNy42Yy0xLjgtMS45LTQuMy0zLTYuOS0yLjljLTIuNiwwLjEtNS4xLDEuMy02LjcsMy4zbC0zOC4yLDQ2LjVsLTkuMy05LjdjLTEuOC0xLjktNC4yLTIuOS02LjgtMi44IGMtMi42LDAuMS01LDEuMy02LjYsMy4zbC0yNS4zLDMwLjZjLTEuMywxLjYtMi4xLDMuNi0yLjEsNS43djI3LjJjMCw1LDQsOSw5LDloMTI0LjhjNSwwLDktNCw5LTlWMTg2YzAtMi4yLTAuOC00LjQtMi4zLTYuMSBMMTQyLjcsMTM3LjZ6IE0xNjUuNiwyMjkuN0g1OC44di0xNWwxNi44LTIwLjNsOS4zLDkuN2MxLjgsMS45LDQuMywyLjksNi44LDIuOGMyLjYtMC4xLDUtMS4zLDYuNi0zLjNsMzgtNDYuM2wyOS4yLDMyLjFWMjI5Ljd6Ii8+PC9nPjwvc3ZnPg==");
   background-blend-mode: overlay;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 15px;
+  aspect-ratio: 1;
 
   @each $size-label, $size in $skelly-image-sizes {
     &--#{$size-label} {
@@ -107,17 +111,32 @@ p {
     }
   }
 
-  &--landscape {
-    width: 100% !important;
+  &--square{
+    aspect-ratio: 1;
   }
 
+  &--landscape {
+    aspect-ratio: 4/3;
+    height:auto;
+  }
+  
   &--portrait {
-    height: 100% !important;
+    aspect-ratio: 3/4;
+    width:auto;
+  }
+
+  &--wide {
+    aspect-ratio: 16/9;
+    height:auto;
+  }
+
+  &--tall {
+    aspect-ratio: 9/16;
+    width:auto;
   }
 
   &--circle {
     border-radius: 50%;
-    box-shadow: inset 0px 0px 1px darken($skelly-color, 50%);
   }
 }
 
@@ -131,7 +150,16 @@ h6 {
   padding: 0;
   .skeleton__line {
     margin-bottom: 0.2em;
-    background: darken($skelly-color, 5%);
+    background: var(--skelly-color);
+  }
+  &.skeleton--center{
+    margin:0 auto;
+  }
+  &.skeleton--left{
+    margin:0 auto 0 0;
+  }
+  &.skeleton--right{
+    margin:0 0 0 auto;
   }
 }
 

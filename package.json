@@ -1,17 +1,15 @@
 {
   "name": "@ritterim/skellycss",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "A light-weight CSS framework to quickly implement skeletons into your projects.",
   "main": "dist/skelly.js",
   "files": [
     "dist/"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel src/skelly.js",
-    "build": "npm run build:full && npm run build:minify",
-    "build:minify": "parcel build src/skelly.js --out-file skelly.min.js --public-url ./dist/",
-    "build:full": "parcel build src/skelly.js --no-minify --public-url ./dist/"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -27,13 +25,18 @@
   "bugs": {
     "url": "https://github.com/ritterim/skellyCSS/issues"
   },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ],
   "homepage": "https://github.com/ritterim/skellyCSS#readme",
   "devDependencies": {
-    "cssnano": "^4.1.10",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.30.0"
-  },
-  "dependencies": {
-    "assets": "^3.0.1"
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.0",
+    "vite": "^2.7.13",
+    "vite-plugin-banner": "^0.2.0"
   }
 }
