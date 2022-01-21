@@ -25,7 +25,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'main.js'),
       name: 'SkellyCSS',
-      fileName: () => `skelly-css.js`,
+      fileName: () => `skelly.js`,
     },
   },
 });
