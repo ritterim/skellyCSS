@@ -1,0 +1,29 @@
+name: Version Tag Build
+
+permissions:
+  contents: write
+  id-token: write
+  packages: write
+
+on:
+  push:
+    # To limit whether this executes on a specific branch, you must adjust the allowed_branches input.
+    # Specifying 'branches' here is a logical 'OR', not a logical 'AND'.
+    tags:
+      - v0.*
+
+jobs:
+
+  version-tag-build:
+    uses: ritterim/public-github-actions/.github/workflows/npm-packages-release-on-tag.yml@v1.3.0
+    #uses: ./.github/workflows/npm-packages-release-on-tag.yml
+    secrets:
+      myget_api_key: ${{ secrets.MYGET_DEPLOY_API_KEY_SECRET }}
+      npmjs_org_api_key: ${{ secrets.RITTERIM_NPMJS_PUBLISH_TOKEN }}
+    with:
+      allowed_branches: |
+        main
+      npm_package_name: skellycss
+      run_tests: false
+      npmjs_org_access_public: true
+      publish_to_npmjs_org: true
