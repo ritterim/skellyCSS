@@ -1,0 +1,32 @@
+name: PR Merged
+
+permissions:
+  contents: read
+  id-token: write
+  packages: read
+
+on:
+
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
+  # By default, a workflow only runs when a pull_request event's activity type is opened, synchronize, or reopened.
+  # We want to run on 'closed' to trigger, but we also have to check if it was merged.
+  # That check is: if: github.event.pull_request.merged == true
+  pull_request:
+    types: [ closed ]
+    branches:
+      - main
+
+jobs:
+
+  npm-packages-pr-create-tag:
+    uses: ritterim/public-github-actions/.github/workflows/npm-packages-pr-create-tag.yml@v1.3.0
+    #uses: ./.github/workflows/npm-packages-pr-create-tag.yml
+    if: github.event.pull_request.merged == true
+    secrets:
+      gh_actions_secret_passing_passphrase: ${{ secrets.ACTIONS_SECRET_PASSING_PASSPHRASE }}
+      gh_app_private_key: ${{ secrets.RIMDEV_NPM_RELEASES_APP_PRIVATE_KEY }}
+    with:
+      always_increment_patch_version: true
+      gh_app_id: ${{ vars.RIMDEV_NPM_RELEASES_APP_APPID }}
+      npm_package_name: skellycss
+      run_tests: false
