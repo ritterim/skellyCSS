@@ -30,11 +30,13 @@ A light-weight CSS framework to quickly implement skeletons into your projects.
 <br />
 
 ## Installation
+
 ### npm
 To install via node package manager:
 ```shell
 npm install @ritterim/skellycss
 ```
+
 ### CSS
 Include the Skelly css file wherever you add your CSS:
 ``` html
