@@ -32,11 +32,11 @@
   ],
   "homepage": "https://github.com/ritterim/skellyCSS#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.5",
-    "postcss-cli": "^9.1.0",
-    "sass": "^1.49.0",
-    "vite": "^2.7.13",
-    "vite-plugin-banner": "^0.2.0"
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.66.1",
+    "vite": "^4.4.9",
+    "vite-plugin-banner": "^0.7.0"
   }
 }
