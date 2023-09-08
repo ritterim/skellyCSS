@@ -11,7 +11,7 @@ on:
   # By default, a workflow only runs when a pull_request event's activity type is opened, synchronize, or reopened.
   # We want to run on 'closed' to trigger, but we also have to check if it was merged.
   # That check is: if: github.event.pull_request.merged == true
-  pull_request:
+  pull_request_target:
     types: [ closed ]
     branches:
       - main
@@ -19,7 +19,7 @@ on:
 jobs:
 
   npm-packages-pr-create-tag:
-    uses: ritterim/public-github-actions/.github/workflows/npm-packages-pr-create-tag.yml@v1.3.0
+    uses: ritterim/public-github-actions/.github/workflows/npm-packages-pr-create-tag.yml@v1.4.0
     #uses: ./.github/workflows/npm-packages-pr-create-tag.yml
     if: github.event.pull_request.merged == true
     secrets:
