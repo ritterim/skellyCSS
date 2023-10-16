@@ -19,7 +19,7 @@ on:
 jobs:
 
   npm-packages-pr-create-tag:
-    uses: ritterim/public-github-actions/.github/workflows/npm-packages-pr-create-tag.yml@v1.4.0
+    uses: ritterim/public-github-actions/.github/workflows/npm-packages-pr-create-tag.yml@v1.9.0
     #uses: ./.github/workflows/npm-packages-pr-create-tag.yml
     if: github.event.pull_request.merged == true
     secrets:

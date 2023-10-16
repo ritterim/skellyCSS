@@ -16,7 +16,7 @@ on:
 jobs:
 
   pr-build:
-    uses: ritterim/public-github-actions/.github/workflows/npm-packages-pr-build.yml@v1.4.0
+    uses: ritterim/public-github-actions/.github/workflows/npm-packages-pr-build.yml@v1.9.0
     #uses: ./.github/workflows/npm-packages-pr-build.yml
     with:
       always_increment_patch_version: true

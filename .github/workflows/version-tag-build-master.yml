@@ -15,10 +15,9 @@ on:
 jobs:
 
   version-tag-build:
-    uses: ritterim/public-github-actions/.github/workflows/npm-packages-release-on-tag.yml@v1.4.0
+    uses: ritterim/public-github-actions/.github/workflows/npm-packages-release-on-tag.yml@v1.9.0
     #uses: ./.github/workflows/npm-packages-release-on-tag.yml
     secrets:
-      myget_api_key: ${{ secrets.MYGET_DEPLOY_API_KEY_SECRET }}
       npmjs_org_api_key: ${{ secrets.RITTERIM_NPMJS_PUBLISH_TOKEN }}
     with:
       allowed_branches: |
