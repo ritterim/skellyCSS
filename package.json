@@ -1,6 +1,6 @@
 {
   "name": "@ritterim/skellycss",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A light-weight CSS framework to quickly implement skeletons into your projects.",
   "main": "dist/skelly.js",
   "files": [
